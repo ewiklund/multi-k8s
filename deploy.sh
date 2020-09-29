@@ -1,6 +1,6 @@
 docker build -t ewiklund/multi-client:latest -t ewiklund/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t ewiklund/multi-server:latest -t ewiklund/multi-server:$SHA -f ./client/Dockerfile ./server
-docker build -t ewiklund/multi-worker:latest -t ewiklund/multi-worker:$SHA -f ./client/Dockerfile ./worker
+docker build -t ewiklund/multi-server:latest -t ewiklund/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t ewiklund/multi-worker:latest -t ewiklund/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 docker push ewiklund/multi-client:latest
 docker push ewiklund/multi-server:latest
 docker push ewiklund/multi-worker:latest
