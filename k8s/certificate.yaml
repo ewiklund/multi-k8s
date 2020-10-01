@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: wiklund-papadopulos-info-tls
+spec:
+  secretName: wiklund-papadopulos-info
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: wiklund-papadopulos.info
+  dnsNames:
+    - wiklund-papadopulos.info
+    - www.wiklund-papadopulos.info
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - wiklund-papadopulos.info
+          - www.wiklund-papadopulos.info
